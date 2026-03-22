@@ -1,12 +1,12 @@
 body {
-  font-family: Verdana, Arial, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1rem;
   color: black;
   margin: 0;
 }
 
 header {
-  background-color: rgb(7, 167, 153);
+  background-color: rgba(150, 2, 137, 0.562);
   color: white;
   padding: 5rem;
   text-align: center;
@@ -57,7 +57,7 @@ p {
 }
 
 a {
-  color: #02524e;
+  color: #19be03;
   text-decoration: none;
 }
 
@@ -72,7 +72,7 @@ section {
 h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #34495e;
+  color: rgba(150, 2, 137, 0.562);
 }
 
 /* FORMULARIO */
@@ -95,7 +95,7 @@ select {
 button {
   width: 100%;
   padding: 1rem;
-  background-color: #02463a;
+  background-color: rgba(150, 2, 137, 0.562);
   color: white;
   border: none;
   border-radius: 0.5rem;
