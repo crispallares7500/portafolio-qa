@@ -15,7 +15,7 @@ header {
 
 main {
   padding: 5rem;
-  text-align: left;
+  text-align: justify;
 }
 
 nav {
@@ -73,7 +73,7 @@ section {
 h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: rgba(211, 4, 125, 0.562);
+  color: rgba(211, 4, 66, 0.959);
 }
 
 /* FORMULARIO */
