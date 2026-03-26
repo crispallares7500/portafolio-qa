@@ -12,6 +12,20 @@ header {
   padding: 5rem;
   text-align: center;
 }
+header::before {
+  content: "★";
+  font-size: 3rem;
+  color: #4b0066; 
+  display: block;
+  margin-bottom: 1rem;
+}
+
+header::after {
+  content: "★";
+  font-size: 3rem;
+  color: #4b0066; 
+  display: block;
+  margin-top: 1rem;
 
 main {
   padding: 5rem;
