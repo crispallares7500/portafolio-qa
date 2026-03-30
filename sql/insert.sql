@@ -1,3 +1,5 @@
+INSERT INTO form (name, email, age, subject, message)
+VALUES
 ('ana', 'ana@gmail.com', NULL, 'information', 'hola testing'),
 (NULL, 'pedro@gmail.com', 20, 'job', 'pedro mensaje'),
 ('maria', 'maria@yahoo.com', 25, 'other', 'mensaje de prueba'),
