@@ -1,1 +1,10 @@
-
+('ana', 'ana@gmail.com', NULL, 'information', 'hola testing'),
+(NULL, 'pedro@gmail.com', 20, 'job', 'pedro mensaje'),
+('maria', 'maria@yahoo.com', 25, 'other', 'mensaje de prueba'),
+('ana', 'ana.work@gmail.com', 30, 'job', 'test message'),
+(NULL, 'user1@gmail.com', 22, 'information', 'mensaje testing'),
+('pedro', 'pedro@test.com', 35, 'other', 'test mensaje largo'),
+('juan', 'juan@gmail.com', NULL, 'job', 'hola qa testing'),
+('ana', 'ana.test@mail.com', 28, 'information', 'mensaje con test'),
+(NULL, 'contact@gmail.com', 40, 'job', 'test email gmail'),
+('laura', 'laura@mail.com', 19, 'other', 'mensaje final test');
