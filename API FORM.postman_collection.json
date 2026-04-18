@@ -145,7 +145,7 @@
                   "    pm.response.to.have.status(200);\r",
                   "});\r",
                   "pm.test(\"Body matches string\", function () {\r",
-                  "    pm.expect(pm.response.text()).to.include(25);\r",
+                  "    pm.expect(pm.response.text()).to.include(28);\r",
                   "});"
                 ],
                 "type": "text/javascript",
@@ -158,14 +158,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{API_URL}}?age=eq.25",
+              "raw": "{{API_URL}}?age=eq.28",
               "host": [
                 "{{API_URL}}"
               ],
               "query": [
                 {
                   "key": "age",
-                  "value": "eq.25"
+                  "value": "eq.28"
                 }
               ]
             }
