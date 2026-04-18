@@ -47,6 +47,209 @@
           "response": []
         },
         {
+          "name": "GET FORM name valido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "pm.test(\"Content-Type is present\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\");\r",
+                  "});\r",
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(\"ana\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{API_URL}}?name=eq.ana",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "eq.ana"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET FORM subject valido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(\"information\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{API_URL}}?subject=eq.information",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "subject",
+                  "value": "eq.information"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET FORM age valida",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(25);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{API_URL}}?age=eq.25",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "age",
+                  "value": "eq.25"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET FORM email valido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(\"ana@gmail.com\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{API_URL}}?email=eq.ana@gmail.com",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "eq.ana@gmail.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET FORM sin autentificacion",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is Unauthorized\", function () {\r",
+                  "    pm.response.to.have.status(401);\r",
+                  "});\r",
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{API_URL}}",
+              "host": [
+                "{{API_URL}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "GET FORM con name invalido",
           "event": [
             {
@@ -87,7 +290,7 @@
           "response": []
         },
         {
-          "name": "GET FORM con email invalido",
+          "name": "GET FORM con subject invalido",
           "event": [
             {
               "listen": "test",
@@ -112,13 +315,13 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{API_URL}}?email=invalido",
+              "raw": "{{API_URL}}?subject=invalido",
               "host": [
                 "{{API_URL}}"
               ],
               "query": [
                 {
-                  "key": "email",
+                  "key": "subject",
                   "value": "invalido"
                 }
               ]
@@ -167,7 +370,7 @@
           "response": []
         },
         {
-          "name": "GET FORM con subject invalido",
+          "name": "GET FORM con email invalido",
           "event": [
             {
               "listen": "test",
@@ -192,217 +395,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{API_URL}}?subject=invalido",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "subject",
-                  "value": "invalido"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "GET FORM sin autentificacion",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is Unauthorized\", function () {\r",
-                  "    pm.response.to.have.status(401);\r",
-                  "});\r",
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "noauth"
-            },
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{API_URL}}",
-              "host": [
-                "{{API_URL}}"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "GET FORM name valido",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "pm.test(\"Content-Type is present\", function () {\r",
-                  "    pm.response.to.have.header(\"Content-Type\");\r",
-                  "});\r",
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  "pm.test(\"Body matches string\", function () {\r",
-                  "    pm.expect(pm.response.text()).to.include(\"ana\");\r",
-                  "});"
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{API_URL}}?name=eq.ana",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "name",
-                  "value": "eq.ana"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "GET FORM age valida",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  "pm.test(\"Status code is 200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "pm.test(\"Body matches string\", function () {\r",
-                  "    pm.expect(pm.response.text()).to.include(25);\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{API_URL}}?age=eq.25",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "age",
-                  "value": "eq.25"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "GET FORM subject valido",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  "pm.test(\"Status code is 200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "pm.test(\"Body matches string\", function () {\r",
-                  "    pm.expect(pm.response.text()).to.include(\"information\");\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{API_URL}}?subject=eq.information",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "subject",
-                  "value": "eq.information"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "GET FORM email valido",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  "pm.test(\"Status code is 200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "pm.test(\"Body matches string\", function () {\r",
-                  "    pm.expect(pm.response.text()).to.include(\"ana@gmail.com\");\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{API_URL}}?email=eq.ana@gmail.com",
+              "raw": "{{API_URL}}?email=invalido",
               "host": [
                 "{{API_URL}}"
               ],
               "query": [
                 {
                   "key": "email",
-                  "value": "eq.ana@gmail.com"
+                  "value": "invalido"
                 }
               ]
             }
@@ -442,251 +442,6 @@
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"name\": \"cris\",\r\n  \"email\": \"cris@gmail.com\",\r\n  \"subject\": \"test pruebas editar todos campos\",\r\n  \"age\": 30,\r\n  \"message\": \"editar todos\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "eq.{{IDUSUARIOEDITAR}}"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "PATCH FORM restaurar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 204\", function () {\r",
-                  "    pm.response.to.have.status(204);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"name\": \"cris\",\r\n  \"email\": \"cris@gmail.com\",\r\n  \"subject\": \"test pruebas editar todos campos\",\r\n  \"age\": 30,\r\n  \"message\": \"editar todos\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "eq.{{IDUSUARIOEDITAR}}"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "PATCH FORM editar name vacio",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 400\", function () {\r",
-                  "    pm.response.to.have.status(400);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"name\": \r\n  \r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "eq.{{IDUSUARIOEDITAR}}"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "PATCH FORM editar email vacio",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 400\", function () {\r",
-                  "    pm.response.to.have.status(400);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"email\": \r\n  \r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "eq.{{IDUSUARIOEDITAR}}"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "PATCH FORM editar age vacio",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 400\", function () {\r",
-                  "    pm.response.to.have.status(400);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"age\": \r\n  \r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "eq.{{IDUSUARIOEDITAR}}"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "PATCH FORM editar subject vacio",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 400\", function () {\r",
-                  "    pm.response.to.have.status(400);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"subject\": \r\n  \r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -756,7 +511,7 @@
           "response": []
         },
         {
-          "name": "PATCH FORM editar email",
+          "name": "PATCH FORM editar subject",
           "event": [
             {
               "listen": "test",
@@ -780,7 +535,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"email\": \"cristina@hotmail.com\"\r\n\r\n}",
+              "raw": "{\r\n  \"subject\": \"test pruebas editar subject\"\r\n\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -850,54 +605,7 @@
           "response": []
         },
         {
-          "name": "PATCH FORM editar age invalida",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 400\", function () {\r",
-                  "    pm.response.to.have.status(400);\r",
-                  "});\r",
-                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
-                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-                  "});"
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"age\": -58\r\n\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
-              "host": [
-                "{{API_URL}}"
-              ],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "eq.{{IDUSUARIOEDITAR}}"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "PATCH FORM editar subject",
+          "name": "PATCH FORM editar email",
           "event": [
             {
               "listen": "test",
@@ -921,7 +629,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"subject\": \"test pruebas editar subject\"\r\n\r\n}",
+              "raw": "{\r\n  \"email\": \"cristina@hotmail.com\"\r\n\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -974,6 +682,298 @@
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"name\": \"cris\",\r\n  \"email\": \"cris@gmail.com\",\r\n  \"subject\": \"test no autorizado\",\r\n  \"age\": 30,\r\n  \"message\": \"editar todos\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIOEDITAR}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH FORM editar name vacio",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": null\r\n  \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIOEDITAR}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH FORM editar subject vacio",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"subject\": null\r\n  \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIOEDITAR}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH FORM editar age vacio",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"age\": null\r\n  \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIOEDITAR}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH FORM editar email vacio",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": null\r\n  \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIOEDITAR}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH FORM editar age invalida",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"age\": -58\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_URL}}?id=eq.{{IDUSUARIOEDITAR}}",
+              "host": [
+                "{{API_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIOEDITAR}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH FORM restaurar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response time is less than 2000ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"cris\",\r\n  \"email\": \"cris@gmail.com\",\r\n  \"subject\": \"test pruebas editar todos campos\",\r\n  \"age\": 30,\r\n  \"message\": \"editar todos\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1070,7 +1070,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"test\",\r\n  \"email\": \"crispost@gmail.com\",\r\n  \"subject\": \"pruebaspost\",\r\n  \"age\": 18,\r\n  }",
+              "raw": "{\r\n  \"name\": \"test\",\r\n  \"email\": \"crispost@gmail.com\",\r\n  \"subject\": \"pruebaspost\",\r\n  \"age\": 18\r\n  }",
               "options": {
                 "raw": {
                   "language": "json"
